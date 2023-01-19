@@ -10,4 +10,4 @@
 - npm i
 - npm run dev
   
-4. Change the MongoDB Url in backend/.env file
+4. Change the MongoDB Url in backend/config file
