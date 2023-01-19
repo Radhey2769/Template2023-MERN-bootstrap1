@@ -4,9 +4,9 @@ dotenv.config();
 
 const userRouter = require('./routers/userRouter');
 const cors = require('cors');
+const { PORT } = require('./config');
 
 const app = express();
-const port = process.env.PORT;
 
 
 app.use(express.json());
@@ -24,4 +24,4 @@ app.get('/', (req, res) => {
     res.status(299).send('Working Perfectly!!');
 })
 
-app.listen(port, () => console.log(`Express server has started at ${port}`));
+app.listen(PORT, () => console.log(`Express server has started at ${PORT}`));
