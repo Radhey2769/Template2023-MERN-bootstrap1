@@ -44,37 +44,41 @@ const Footer = () => {
               {/* Content */}
               <h6 className="text-uppercase fw-bold mb-4">
                 <i className="fas fa-gem me-3" />
-                Company name
+                Tournament Organizer
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Just have a look at the end get connected to us via social media 
+                and other platforms too.
               </p>
             </div>
             {/* Grid column */}
             {/* Grid column */}
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               {/* Links */}
-              <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+              <h6 className="text-uppercase fw-bold mb-4">Tournaments</h6>
               <p>
                 <a href="#!" className="text-reset">
-                  Angular
+                  Tennis
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  React
+                  Cricket
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Vue
+                  Football
                 </a>
               </p>
               <p>
                 <a href="#!" className="text-reset">
-                  Laravel
+                  Badminton
+                </a>
+              </p>
+              <p>
+                <a href="#!" className="text-reset">
+                  Volleyball
                 </a>
               </p>
             </div>
@@ -110,17 +114,17 @@ const Footer = () => {
               {/* Links */}
               <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
               <p>
-                <i className="fas fa-home me-3" /> New York, NY 10012, US
+                <i className="fas fa-home me-3" /> Lucknow, 226028, IN
               </p>
               <p>
                 <i className="fas fa-envelope me-3" />
-                info@example.com
+              radheyshyam2769@gmail.com
               </p>
               <p>
-                <i className="fas fa-phone me-3" /> + 01 234 567 88
+                <i className="fas fa-phone me-3" /> +919140491739
               </p>
               <p>
-                <i className="fas fa-print me-3" /> + 01 234 567 89
+                <i className="fas fa-print me-3" /> +918565860872
               </p>
             </div>
             {/* Grid column */}

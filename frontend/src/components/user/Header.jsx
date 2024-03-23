@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useAdminContext } from "../../context/AdminProvider";
+import app_config from "../../config";
+import { useUserContext } from "../../context/UserProvider";
 
 const Header = () => {
-  const { loggedin, setLoggedin, logout } = useAdminContext();
+  const { loggedin, setLoggedin, logout } = useUserContext();
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
+  const url = app_config.apiurl;
 
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         {/* Container wrapper */}
         <div className="container">
           {/* Toggle button */}
@@ -41,19 +46,53 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
+              {loggedin && (
+                <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/signup">
+                      Signup
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      Login
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      index
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      Profile
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      Contact
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      Login
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/main/login">
+                      Login
+                    </NavLink>
+                  </li>
+                </>
+              )}
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/signup">
-                  Signup
+                <NavLink className="nav-link" to="/main/browse">
+                  Browse
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/login">
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/dashboard">
-                  Dashboard
+                <NavLink className="nav-link" to="/user/manageorders">
+                  ManageOrders
                 </NavLink>
               </li>
             </ul>
@@ -62,46 +101,6 @@ const Header = () => {
           {/* Collapsible wrapper */}
           {/* Right elements */}
           <div className="d-flex align-items-center">
-            {/* Icon */}
-            <a className="text-reset me-3" href="#">
-              <i className="fas fa-shopping-cart" />
-            </a>
-            {/* Notifications */}
-            <div className="dropdown">
-              <a
-                className="text-reset me-3 dropdown-toggle hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="fas fa-bell" />
-                <span className="badge rounded-pill badge-notification bg-danger">
-                  1
-                </span>
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Some news
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another news
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </div>
             {/* Avatar */}
             <div className="dropdown">
               <a
@@ -113,25 +112,25 @@ const Header = () => {
                 aria-expanded="false"
               >
                 <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            class="rounded-circle"
-            height="25"
-            alt="Black and White Portrait of a Man"
-            loading="lazy"
-          />
+                  src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                  class="rounded-circle"
+                  height="25"
+                  alt="Black and White Portrait of a Man"
+                  loading="lazy"
+                />
               </a>
               <ul
                 className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuAvatar"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <NavLink className="dropdown-item" to="/user/profile">
                     My profile
-                  </a>
+                  </NavLink>
                 </li>
-                
+
                 <li>
-                  <button onClick={logout} className="dropdown-item">
+                  <button onClick={logout} className="dropdown-item" href="#">
                     Logout
                   </button>
                 </li>

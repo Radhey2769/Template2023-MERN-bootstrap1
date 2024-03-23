@@ -1,12 +1,8 @@
 const express = require("express");
 
 const router = express.Router();
-const Model = require("../models/userModel");
+const Model = require("../models/tournamentModel");
 
-router.get("/", (req, res) => {
-  console.log("Request at user index");
-  res.status(299).send("UserRouter Working Perfectly!!");
-});
 
 router.post("/add", (req, res) => {
   new Model(req.body)
@@ -43,15 +39,6 @@ router.post("/auth", (req, res) => {
       console.error("Error authenticating user", err);
       res.status(502).json({status: "failed"});
     });
-
-  // .then((result) => {
-  //   console.log("User Data Saved");
-  //   res.status(201).json({ status: "success", result });
-  // })
-  // .catch((err) => {
-  //   console.error("Error saving user data", err);
-  //   res.status(500).send("Error saving user data");
-  // });
 });
 
 router.get("/getall", (req, res) => {

@@ -9,3 +9,18 @@
   border: 1px solid black;
   height: 80vh;
 }
+.signup-bg{
+  display: flex;
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/581/154/desktop-wallpaper-backgrounds-for-login-page-login-page.jpg);
+background-color: white;
+}
+.sign-bg{
+  background-image: url(https://t4.ftcdn.net/jpg/04/60/71/01/360_F_460710131_YkD6NsivdyYsHupNvO3Y8MPEwxTAhORh.jpg);
+}
+
+
+.create-tour-bg{
+  background-image: url('https://img.freepik.com/premium-vector/illustration-athlete-sprinting-running-competition-young-professional-sportsman-training-athlete-stadium-championship-tournament-vector_277904-5173.jpg');
+  background-size: cover;
+  background-position: center;
+}

@@ -6,9 +6,8 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  role: { type: String, required: true },
-  created_at: Date,
-  updated_at: Date,
+  role : {type : String, default : "user"},
+  createdAt: Date,
 });
 
 userSchema.pre("save", function (next) {
@@ -54,4 +53,4 @@ userSchema.methods.authenticate = function (formData, cb) {
   });
 };
 
-module.exports = model("user", userSchema);
+module.exports = model("users", userSchema);

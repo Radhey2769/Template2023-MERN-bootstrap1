@@ -4,7 +4,7 @@ const { DB_URL } = require('./config');
 
 mongoose.connect(DB_URL)
 .then((result) => {
-    console.info('Connected to MongoDB');
+    console.info('Connected to Database');
 }).catch((err) => {
     console.error('Error connecting to MongoDB', err);
 });
